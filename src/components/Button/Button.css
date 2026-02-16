@@ -1,0 +1,38 @@
+/* Button.css — STYLES FOR THE BUTTON COMPONENT */
+/* Matches the previous HTML project */
+
+.download-button {
+    margin-top: auto;
+    width: fit-content;
+    background-color: #e6e5e0;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #D8D6CE;
+}
+
+.download-button:active {
+    background-color: #D8D6CE;
+}
+
+/* Primary variant — for "Get Pro" button */
+.download-button.primary {
+    background-color: #111;
+    color: #fff;
+}
+
+.download-button.primary:hover {
+    background-color: #333;
+}
+
+.download-button.primary:active {
+    background-color: #333;
+}

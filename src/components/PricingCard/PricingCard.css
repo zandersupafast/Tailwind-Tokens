@@ -1,0 +1,74 @@
+/* PricingCard.css — STYLES FOR THE PRICING CARD COMPONENT */
+/* Matches the previous HTML project */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    background-color: #f2f1ed;
+    border-radius: 4px;
+    padding: 16px;
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.card-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #26251e;
+    margin-bottom: 8px;
+}
+
+.card-price {
+    font-size: 20px;
+    color: rgba(38, 37, 30, 0.5);
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.card-price-amount {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(38, 37, 30, 0.5);
+}
+
+.card-price-period {
+    font-size: 14px;
+    color: rgba(38, 37, 30, 0.5);
+}
+
+.card-content {
+    margin-bottom: 32px;
+}
+
+.includes-text {
+    font-size: 16px;
+    color: rgba(38, 37, 30, 0.5);
+    margin: 16px 0px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #26251e;
+}
+
+.checkmark {
+    color: #26251e;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 400;
+}

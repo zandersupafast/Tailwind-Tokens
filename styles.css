@@ -1,0 +1,185 @@
+/* ============================================
+   Base reset
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------
+   Page layout
+   -------------------------------------------- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f7f7f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --------------------------------------------
+   Cards container
+   Horizontal row, 24px gap, centered
+   -------------------------------------------- */
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* --------------------------------------------
+   Single pricing card
+   Fixed width 320px, min-height 380px
+   -------------------------------------------- */
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    background-color: #f2f1ed;
+    border-radius: 4px;
+    padding: 16px;
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.card-top {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card typography */
+.card-title {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #26251e;
+    margin-bottom: 8px;
+}
+
+.card-price {
+    font-size: 20px;
+    color: rgba(38, 37, 30, 0.5);
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.card-price-amount {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(38, 37, 30, 0.5);
+}
+
+.card-price-period {
+    font-size: 14px;
+    color: rgba(38, 37, 30, 0.5);
+}
+
+.card-content {
+    margin-bottom: 32px;
+}
+
+.includes-text {
+    font-size: 16px;
+    color: rgba(38, 37, 30, 0.5);
+    margin: 16px 0px;
+}
+
+/* Feature list: no bullets, checkmark + text per row */
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #26251e;
+}
+
+.checkmark {
+    color: #26251e;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 400;
+}
+
+/* --------------------------------------------
+   Buttons
+   Pill shape; .secondary = light, .primary = dark
+   -------------------------------------------- */
+.download-button {
+    margin-top: auto;
+    width: fit-content;
+    background-color: #e6e5e0;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #D8D6CE;
+}
+
+.download-button:active {
+    background-color: #D8D6CE;
+}
+
+.download-button.primary {
+    background-color: #111;
+    color: #fff;
+}
+
+.download-button.primary:hover {
+    background-color: #333;
+}
+
+.download-button.primary:active {
+    background-color: #333;
+}
+
+.download-button.tertiary {
+    background-color: transparent;
+    border: 1px solid #c2c1ba;
+    color: #333;
+}
+
+.download-button.tertiary:hover {
+    background-color: #dbdbd7;
+}
+
+.download-button.tertiary:active {
+    background-color: #dbdbd7;
+}
+/* --------------------------------------------
+   Page label (top banner)
+   Fixed, centered, light shadow
+   -------------------------------------------- */
+.page-label {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #666;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.page-label strong {
+    color: #333;
+}

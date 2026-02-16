@@ -1,37 +1,67 @@
-/* index.css — GLOBAL STYLES */
-/* These styles apply to the entire app, not a specific component */
-/* Things like resets, body defaults, and fonts belong here */
-/* Component-specific styles live in their own CSS files (e.g. Button.css) */
+/* index.css — Global styles + design tokens
+ *
+ * HOW TAILWIND MAPS TOKENS → CLASSES
+ * Tailwind reads @theme and auto-generates utility classes from the token names.
+ * It strips the category prefix (--color-, --font-) and creates classes:
+ *
+ *   --color-{name}  →  bg-{name}      (background-color)
+ *                       text-{name}    (color)
+ *                       border-{name}  (border-color)
+ *
+ *   --font-{name}   →  font-{name}    (font-family)
+ *
+ * Example: --color-card → bg-card, text-card, border-card
+ * There is no config file connecting them — the naming convention IS the mapping.
+ *
+ * TOKEN LAYERS
+ * Tokens are organised in three layers:
+ *   1. Primitive  — raw palette values (gray-900, cream-50, etc.)
+ *   2. Semantic   — purpose-based names that reference primitives (surface, text-primary)
+ *   3. Component  — map semantic tokens to specific UI elements (btn-primary, btn-secondary)
+ *
+ * Changing a primitive updates every semantic and component token that references it.
+ */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import "tailwindcss";
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f7f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
+@theme {
 
-.page-label {
-    position: fixed;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    color: #666;
-    background: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+  /* ── Primitives — raw palette values ──
+   * These define the raw colour palette. They generate classes (e.g. bg-cream-50)
+   * but you should avoid using them directly — use semantic tokens instead. */
+  --color-gray-900: #111;
+  --color-gray-700: #333;
+  --color-gray-500: #666;
+  --color-cream-50:  #f7f7f4;
+  --color-cream-100: #f2f1ed;
+  --color-cream-200: #e6e5e0;
+  --color-cream-300: #D8D6CE;
+  --color-ink:       #26251e;
+  --color-ink-50:    rgba(38, 37, 30, 0.5);
 
-.page-label strong {
-    color: #333;
+  /* ── Semantic — purpose-based, reference primitives ──
+   * These are the tokens you use in components.
+   * e.g. --color-surface → bg-surface, --color-text-primary → text-text-primary */
+  --color-surface:        var(--color-cream-50);
+  --color-card:           var(--color-cream-100);
+  --color-text-primary:   var(--color-ink);
+  --color-text-muted:     var(--color-ink-50);
+  --color-text-secondary: var(--color-gray-500);
+  --color-action-primary:          var(--color-gray-900);
+  --color-action-primary-hover:    var(--color-gray-700);
+  --color-action-secondary:        var(--color-cream-200);
+  --color-action-secondary-hover:  var(--color-cream-300);
+
+  /* ── Component — map to semantic tokens ──
+   * These power specific UI elements.
+   * e.g. --color-btn-primary → bg-btn-primary, hover:bg-btn-primary-hover */
+  --color-btn-primary:         var(--color-action-primary);
+  --color-btn-primary-hover:   var(--color-action-primary-hover);
+  --color-btn-secondary:       var(--color-action-secondary);
+  --color-btn-secondary-hover: var(--color-action-secondary-hover);
+
+  /* ── Typography ──
+   * --font-{name} → font-{name}
+   * e.g. --font-sans → font-sans (applied on <body> in index.html) */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }

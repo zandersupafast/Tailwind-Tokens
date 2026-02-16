@@ -1,27 +1,51 @@
-# HTML vs JSX — Pricing card
+# React pricing app — teaching focus: `src` and App.jsx
 
-A small teaching project so designers can compare **plain HTML** and **JSX** side by side. Same layout and styles; only the way the UI is written changes.
+A small teaching project focused on the **`src`** folder and how a React app is structured, with **App.jsx** as the root component.
+
+## Project structure
+
+All application code lives in **`src/`**:
+
+```
+src/
+├── index.html      # Single HTML shell — React mounts into <div id="root">
+├── index.jsx       # Entry point: mounts the app into the page
+├── index.css       # Global styles (resets, body, fonts)
+├── App.jsx         # Root component — start here for teaching
+├── pages/
+│   ├── Pricing.jsx
+│   └── Pricing.css
+└── components/
+    ├── PricingCard/
+    │   ├── PricingCard.jsx
+    │   └── PricingCard.css
+    └── Button/
+        ├── Button.jsx
+        └── Button.css
+```
+
+- **`index.jsx`** runs once on load and renders `<App />` into the DOM.
+- **`App.jsx`** is the top of the component tree; it currently renders the Pricing page. This is the main file to use when teaching structure and composition.
 
 ## How to run
 
-No build step. Open the files in a browser:
+From the project root:
 
-- **HTML version:** open `index.html` (or run a simple local server if needed for CORS).
-- **JSX version:** open `jsx-version.html`. It loads React and Babel from CDNs and runs in the browser.
+```bash
+npm install
+npm run dev
+```
 
-## Teaching points
+Vite uses **`src`** as the project root (see `vite.config.js`), so the dev server serves the app from `src/index.html` and `src/index.jsx`.
 
-| HTML | JSX |
-|------|-----|
-| `class="card"` | `className="card"` (because `class` is reserved in JS) |
-| Static markup only | Markup + JavaScript expressions in `{ }` |
-| One-off structure | Reusable **components** (e.g. `<PricingCard />`) with **props** (e.g. `title`, `features`) |
-| Copy-paste to add a card | Pass new data: `<PricingCard title="Pro" features={[...]} />` |
+## Teaching focus
 
-Same CSS (`styles.css`) is used for both versions so the visual result is identical.
+| Topic | Where |
+|-------|--------|
+| Entry point | `src/index.jsx` — creates root, renders `<App />` |
+| Root component / component tree | `src/App.jsx` — imports and renders pages (e.g. `<Pricing />`) |
+| Pages | `src/pages/Pricing.jsx` — assembles components and data |
+| Reusable components | `src/components/PricingCard/`, `src/components/Button/` |
+| JSX vs HTML | `className` instead of `class`; expressions in `{ }`; components and props |
 
-## Files
-
-- `index.html` — Pure HTML + CSS pricing cards (centered).
-- `jsx-version.html` — Same UI built with a React component and JSX.
-- `styles.css` — Shared styles for both versions.
+Same CSS approach in both components and pages: each component can have its own `.css` file; `index.css` holds global styles.

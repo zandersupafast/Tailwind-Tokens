@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans — React App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-CVSq1yZY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B_6pb3Wf.css">
+</head>
+<body class="bg-surface font-sans flex justify-center items-center min-h-screen p-5">
+    <!-- ── TAILWIND CLASSES ON <body> ──
+         bg-surface     → uses our "surface" colour token (#f7f7f4) from @theme in index.css
+         font-sans      → uses our "font-sans" token (Inter font stack)
+         flex justify-center items-center → centres the app on the page
+         min-h-screen   → minimum height of 100vh (full viewport)
+         p-5            → 20px padding (5 = 1.25rem = 20px)
+
+         Previously these were hardcoded in index.css as:
+           body { background-color: #f7f7f4; font-family: 'Inter'... }
+         Now they reference tokens, so changing @theme updates everything. -->
+
+    <!-- This is the only HTML in the entire app -->
+    <!-- React takes over this empty div and fills it with components -->
+    <div id="root"></div>
+
+    <!-- This loads our entry file (index.jsx) which starts the React app -->
+    <!-- "type=module" tells the browser to use modern JavaScript imports -->
+</body>
+</html>

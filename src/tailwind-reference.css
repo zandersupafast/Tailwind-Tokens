@@ -1,0 +1,112 @@
+/* ============================================================
+ * TAILWIND CLASS REFERENCE
+ * ============================================================
+ * This file documents every Tailwind utility class used in this
+ * project and shows the CSS it generates. Nothing here is imported
+ * or executed — it exists purely as a reference for designers.
+ *
+ * Classes that use a design token (from index.css @theme) are
+ * marked with → TOKEN so you can see the connection.
+ * ============================================================ */
+
+
+/* ── LAYOUT ── */
+
+.flex          { display: flex; }
+.inline-flex   { display: inline-flex; }
+.flex-col      { flex-direction: column; }
+.items-center  { align-items: center; }
+.items-start   { align-items: flex-start; }
+.items-baseline { align-items: baseline; }
+.justify-center { justify-content: center; }
+.gap-6         { gap: 1.5rem; }              /* 24px */
+.shrink-0      { flex-shrink: 0; }
+
+
+/* ── SIZING ── */
+
+.w-fit         { width: fit-content; }
+.w-80          { width: 20rem; }             /* 320px */
+.min-h-screen  { min-height: 100vh; }
+.min-h-\[380px\] { min-height: 380px; }     /* custom value via square brackets */
+
+
+/* ── SPACING (margin & padding) ── */
+
+.p-0           { padding: 0; }
+.p-4           { padding: 1rem; }            /* 16px */
+.p-5           { padding: 1.25rem; }         /* 20px */
+.px-4          { padding-left: 1rem; padding-right: 1rem; }    /* 16px horizontal */
+.px-6          { padding-left: 1.5rem; padding-right: 1.5rem; } /* 24px horizontal */
+.py-2          { padding-top: 0.5rem; padding-bottom: 0.5rem; } /* 8px vertical */
+.py-3\.5       { padding-top: 0.875rem; padding-bottom: 0.875rem; } /* 14px vertical */
+.mb-2          { margin-bottom: 0.5rem; }    /* 8px */
+.mb-8          { margin-bottom: 2rem; }      /* 32px */
+.my-4          { margin-top: 1rem; margin-bottom: 1rem; } /* 16px vertical */
+.mr-2\.5       { margin-right: 0.625rem; }   /* 10px */
+.mt-auto       { margin-top: auto; }         /* pushes element to bottom of flex column */
+
+
+/* ── POSITIONING ── */
+
+.fixed         { position: fixed; }
+.top-4         { top: 1rem; }                /* 16px from top */
+.left-1\/2     { left: 50%; }
+.-translate-x-1\/2 { transform: translateX(-50%); } /* centres a fixed element horizontally */
+
+
+/* ── TYPOGRAPHY ── */
+
+.font-sans     { font-family: var(--font-sans); } /* → TOKEN: Inter font stack */
+.font-normal   { font-weight: 400; }
+.font-medium   { font-weight: 500; }
+.text-sm       { font-size: 0.875rem; }      /* 14px */
+.text-base     { font-size: 1rem; }          /* 16px */
+.text-xl       { font-size: 1.25rem; }       /* 20px */
+.text-\[22px\] { font-size: 22px; }          /* custom value via square brackets */
+.leading-7     { line-height: 1.75rem; }     /* 28px */
+
+
+/* ── COLOURS (background) ── */
+
+.bg-surface    { background-color: var(--color-surface); }    /* → TOKEN: page background */
+.bg-card       { background-color: var(--color-card); }       /* → TOKEN: card background */
+.bg-white      { background-color: #fff; }
+.bg-btn-secondary { background-color: var(--color-btn-secondary); } /* → TOKEN: default button */
+.bg-btn-primary   { background-color: var(--color-btn-primary); }   /* → TOKEN: CTA button */
+
+
+/* ── COLOURS (text) ── */
+
+.text-text-primary   { color: var(--color-text-primary); }    /* → TOKEN: headings, body */
+.text-text-muted     { color: var(--color-text-muted); }      /* → TOKEN: secondary info */
+.text-text-secondary { color: var(--color-text-secondary); }   /* → TOKEN: subtle UI text */
+.text-white          { color: #fff; }
+
+
+/* ── HOVER STATES ── */
+/* Tailwind prefix "hover:" applies the style only on mouse hover */
+
+.hover\:bg-btn-secondary-hover:hover { background-color: var(--color-btn-secondary-hover); } /* → TOKEN */
+.hover\:bg-btn-primary-hover:hover   { background-color: var(--color-btn-primary-hover); }   /* → TOKEN */
+
+
+/* ── BORDERS & CORNERS ── */
+
+.border-none   { border: none; }
+.rounded       { border-radius: 0.25rem; }   /* 4px */
+.rounded-lg    { border-radius: 0.5rem; }    /* 8px */
+.rounded-full  { border-radius: 9999px; }    /* pill shape */
+
+
+/* ── EFFECTS ── */
+
+.shadow-sm     { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+.cursor-pointer { cursor: pointer; }
+.transition-colors { transition-property: color, background-color, border-color; }
+.duration-200  { transition-duration: 200ms; }
+
+
+/* ── LIST ── */
+
+.list-none     { list-style-type: none; }

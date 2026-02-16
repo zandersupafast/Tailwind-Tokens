@@ -1,40 +1,36 @@
-// PricingCard.jsx — A REUSABLE PRICING CARD COMPONENT
-// This component demonstrates "composition" — it uses the Button component inside it.
-// It accepts these props:
-//   - title: the plan name (e.g. "Hobby", "Pro")
-//   - priceAmount: the price text (e.g. "Free", "$20")
-//   - pricePeriod: optional period (e.g. "/mo." or null)
-//   - includesText: the label above the features list
-//   - features: an array of feature strings to display as a list
-//   - buttonText: the label for the button
-//   - buttonVariant: passed through to the Button component ("primary" or "secondary")
+// PricingCard.jsx — Reusable pricing card component.
+// Props: title, priceAmount, pricePeriod, includesText, features[], buttonText, buttonVariant
 
-// "import" pulls in the Button component from its folder
-// This is how components connect to each other in a real project
 import Button from '../Button/Button';
-import './PricingCard.css';
 
 function PricingCard({ title, priceAmount, pricePeriod, includesText, features, buttonText, buttonVariant }) {
     return (
-        <div className="card">
-            <div className="card-top">
-                <h3 className="card-title">{title}</h3>
-                <p className="card-price">
-                    <span className="card-price-amount">{priceAmount}</span>
-                    {pricePeriod != null && <span className="card-price-period">{pricePeriod}</span>}
+        <div className="flex flex-col min-h-[380px] bg-card rounded p-4 w-80 shrink-0">
+            <div className="flex flex-col">
+                <h3 className="text-[22px] leading-7 font-normal text-text-primary mb-2">
+                    {title}
+                </h3>
+
+                <p className="text-xl text-text-muted inline-flex items-baseline">
+                    <span className="text-[22px] font-normal text-text-muted">{priceAmount}</span>
+                    {pricePeriod != null && (
+                        <span className="text-sm text-text-muted">{pricePeriod}</span>
+                    )}
                 </p>
-                <div className="card-content">
-                    <p className="includes-text">{includesText}</p>
-                    <ul className="features-list">
+
+                <div className="mb-8">
+                    <p className="text-base text-text-muted my-4">{includesText}</p>
+                    <ul className="list-none p-0">
                         {features.map((feature, i) => (
-                            <li key={i}>
-                                <span className="checkmark">✓</span>
+                            <li key={i} className="flex items-center mb-2 text-base text-text-primary">
+                                <span className="text-text-primary text-sm mr-2.5 font-normal">&#10003;</span>
                                 {feature}
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
+
             <Button label={buttonText} variant={buttonVariant} />
         </div>
     );

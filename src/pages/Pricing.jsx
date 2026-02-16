@@ -1,15 +1,8 @@
-// Pricing.jsx — A PAGE COMPONENT
-// Pages live in the "pages" folder and represent entire screens in the app.
-// This page assembles PricingCard components and passes data to them.
-// In Next.js, each file in the "pages" or "app" folder automatically becomes a route (URL).
+// Pricing.jsx — Page component that assembles pricing cards with plan data.
 
-// Import the PricingCard component from the components folder
 import PricingCard from '../components/PricingCard/PricingCard';
-import './Pricing.css';
 
 function Pricing() {
-    // DATA — each object holds all the content for one pricing card
-    // Changing this data automatically updates what the cards display
     const hobbyPlan = {
         title: 'Hobby',
         priceAmount: 'Free',
@@ -35,12 +28,12 @@ function Pricing() {
     };
 
     return (
-        // <> is a React Fragment — groups elements without adding extra HTML divs
         <>
-            <p className="page-label"><strong>React App</strong> — running with Vite</p>
-            <div className="cards-container">
-                {/* The spread operator {...hobbyPlan} passes all object properties as individual props */}
-                {/* This is the same as: title="Hobby" price="Free" includesText="Includes:" etc. */}
+            <p className="fixed top-4 left-1/2 -translate-x-1/2 text-sm text-text-secondary bg-white px-4 py-2 rounded-lg shadow-sm">
+                <strong className="text-text-primary">React App</strong> — running with Vite + Tailwind Tokens
+            </p>
+
+            <div className="flex gap-6 justify-center items-start">
                 <PricingCard {...hobbyPlan} />
                 <PricingCard {...proPlan} />
             </div>
